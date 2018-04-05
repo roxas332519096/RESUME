@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    color:white;
+}
+
+.logo{
+    float: left;
+}
+
+nav {
+    float: right;
+    margin-right:16px;
+    padding-top:1px;
+}
+
+nav li {
+    padding-top:3px;
+    margin-right: 17px;
+}
+
+nav li a {
+    padding: 5px 0;
+    font: bold 12px "Microsoft YaHei";
+    color: #b7b7b7;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+
+}
+nav li a:hover {
+    border-bottom: 3px solid rgb(224, 101, 103);
+}
+
+.logo {
+    padding: 2px 0 3px 0;
+    margin-left: 16px;
+    font:bold 24px "Arial Black";
+}
+
+.rs {
+    color:#e6686a;
+}
+
+.logo .card {
+    color: #9a9da2;
+}
+
+.topNavBar{
+    margin:20px 0;
+}

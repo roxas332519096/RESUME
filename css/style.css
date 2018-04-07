@@ -1,6 +1,6 @@
 body {
-    background-color: black;
-    color:white;
+    background-color:rgb(239, 239, 239);
+    color:#000;
 }
 
 .logo{
@@ -46,4 +46,80 @@ nav li a:hover {
 
 .topNavBar{
     margin:20px 0;
+}
+
+.banner {
+    background: url(../img/rs-cover.jpg);
+    background-position: center center;
+    height: 515px;
+    margin-top: -84px;
+}
+
+.banner .mask {
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.user-card {
+    max-width: 940px;
+    margin: 0 auto;
+    border:1px solid red;
+}
+
+.pictureAndText {
+    padding: 50px;
+}
+
+.picture {
+    float: left;
+    margin-right: 65px;
+}
+
+.text {
+    float: left;
+    width: 470px;
+}
+
+.welcome {
+    background-color: rgb(203, 104, 106);
+    display: inline-block;
+    line-height: 22px;
+    padding:4px 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.profile h1 {
+    margin-top:20px;
+}
+
+.profile hr {
+    margin:20px 0;
+    border: none;
+    border-top:1px solid #DEDEDE;
+}
+
+
+
+.profile dl dt {
+    float: left;
+    font-weight: bold;
+    width: 30%;
+}
+
+.profile dl dd{
+    float: left;
+    width:70%;
+    color: #9da0a7;
+    padding: 5px 0;
+}
+
+.media {
+    background-color: rgb(203, 104, 106);
+}
+
+
+.media a {
+    display: inline;
+    
 }

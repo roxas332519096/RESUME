@@ -87,6 +87,18 @@ nav li a:hover {
     padding:4px 16px;
     color: #fff;
     margin-bottom: 10px;
+    position: relative;
+}
+
+.triangle {
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: rgb(203, 104, 106);
+    border-top-width: 0px;
+    position: absolute;
+    left: 4px;
+    top: 100%;
 }
 
 .profile h1 {

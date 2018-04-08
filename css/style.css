@@ -63,7 +63,7 @@ body {
 .user-card {
     max-width: 940px;
     margin: -340px auto 0;
-    background-color: rgb(239, 239, 239);
+    background-color: #fff;
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 
@@ -186,7 +186,7 @@ a.button:hover{
     font-size: 18px;
 }
 
-.skills{
+section.skills,section.portfolio{
     margin-top: 70px;
     margin:70px auto 30px;
     max-width: 940px;
@@ -207,6 +207,7 @@ section h2 {
 .skills ol {
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
     padding: 40px 40px 0 40px;
+    background: #fff;
 }
 
 .skills ol li {
@@ -239,9 +240,86 @@ section h2 {
 
 .skills ol li:nth-child(even) {
     margin-left: 33px;
+    
+} 
+
+section.portfolio{
+text-align: center;
 }
 
-section ol li {
+.portfolio nav {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.portfolio ol {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 0;
+}
+
+.portfolio li {
     float: left;
+    margin-left: 40px;
+    cursor: pointer;
 }
 
+.portfolio ol li:first-child{
+   margin-left: 0;
+}
+
+.portfolio .bar {
+    margin:5px auto 28px;
+    height: 5px;
+    background: white;
+    border-radius: 2px;
+}
+
+.portfolio .bar .bar-inner {
+    height: 100%;
+    background: #E6686A;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.portfolio .state-1 .bar-inner{
+    margin-left: 0;
+    width:50px;
+}
+
+
+.portfolio  .state-2 .bar-inner{
+    margin-left: 65px;
+    width:50px;
+}
+
+.portfolio  .state-3 .bar-inner{
+    margin-left: 140px;
+    width:96px;
+}
+
+
+.jobs {
+    position: relative;
+    height: 597px;
+    margin-bottom: 100px;
+}
+
+.jobs .big {
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.jobs .small1  {
+    position: absolute;
+    left: 645px;
+}
+
+.jobs .small2 {
+    position: absolute;
+    top:312px;
+    left: 645px;
+}

@@ -7,18 +7,18 @@ body {
     float: left;
 }
 
-nav {
+.topNavBar nav {
     float: right;
     margin-right:16px;
     padding-top:1px;
 }
 
-nav li {
+.topNavBar nav li {
     padding-top:3px;
     margin-right: 17px;
 }
 
-nav li a {
+.topNavBar nav li a {
     padding: 5px 0;
     font: bold 12px "Microsoft YaHei";
     color: #b7b7b7;
@@ -26,7 +26,7 @@ nav li a {
     border-bottom: 3px solid transparent;
 
 }
-nav li a:hover {
+.topNavBar nav li a:hover {
     border-bottom: 3px solid rgb(224, 101, 103);
 }
 
@@ -62,8 +62,9 @@ nav li a:hover {
 
 .user-card {
     max-width: 940px;
-    margin: 0 auto;
-    border:1px solid red;
+    margin: -340px auto 0;
+    background-color: rgb(239, 239, 239);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 
 .pictureAndText {
@@ -154,3 +155,93 @@ nav li a:hover {
 .media a:hover {
     background-color: rgb(207, 93, 95);
 }
+
+p.downloadbtn{
+    text-align: center;
+}
+
+a.button {
+    border: 1px solid #cdcfd1;
+    padding:22px 50px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #3d4451;
+    border-radius: 2px;
+    margin:32px 0 40px;
+    transition: 0.3s;
+}
+
+a.button:hover{
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.25);
+}
+
+.slefIntroduction {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: kai;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.skills{
+    margin-top: 70px;
+    margin:70px auto 30px;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills h2,
+section h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.skills ol {
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    padding: 40px 40px 0 40px;
+}
+
+.skills ol li {
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.skills .bar {
+    background-color: #FAE1E1;
+    width: 100%;
+    height: 5px;
+    margin:5px 0 42px;
+    border-radius: 2px;
+}
+
+.bar .bar-in {
+    background-color: rgb(203, 104, 106);
+    width: 50%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.skills h3 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+.skills ol li:nth-child(even) {
+    margin-left: 33px;
+}
+
+section ol li {
+    float: left;
+}
+

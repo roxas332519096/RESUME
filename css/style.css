@@ -1,6 +1,55 @@
 body {
     background-color:rgb(239, 239, 239);
-    color:#000;
+    position: relative;
+}
+
+.stieWelcome {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #888;
+    position: fixed;
+    z-index: 1;
+ }
+
+ .stieWelcome.active {
+    display: flex;
+}
+
+.loading{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+ .loading::before,.loading::after{
+    content: "";
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: s 2s linear infinite;
+}
+
+.loading::after{
+    animation-delay: 0.75s;
+}
+
+@keyframes s{
+    0%{width:0px; height:0px;opacity:1;}
+    100%{width:100px;height:100px;opacity:0}
+    }
+
+.topNavBar{
+    padding:20px 0;
 }
 
 .logo{
@@ -44,9 +93,7 @@ body {
     color: #9a9da2;
 }
 
-.topNavBar{
-    margin:20px 0;
-}
+
 
 .banner {
     background: url(../img/rs-cover.jpg);
@@ -132,6 +179,12 @@ body {
     text-align: center;
 }
 
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 
 
 .media svg {
@@ -187,12 +240,10 @@ a.button:hover{
 }
 
 section.skills,section.portfolio{
-    margin-top: 70px;
-    margin:70px auto 30px;
+    margin:70px auto 0px;
+    padding-bottom: 30px;
     max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-}
+ }
 
 .skills h2,
 section h2 {
@@ -267,6 +318,8 @@ text-align: center;
     font-weight: bold;
 }
 
+
+
 .portfolio ol li:first-child{
    margin-left: 0;
 }
@@ -305,7 +358,7 @@ text-align: center;
 .jobs {
     position: relative;
     height: 597px;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
 }
 
 .jobs .big {

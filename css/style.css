@@ -50,6 +50,20 @@ body {
 
 .topNavBar{
     padding:20px 0;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    transition: all 0.5s;
+    color: #b7b7b7;
+}
+
+.topNavBar.sticky{
+    background: white;
+    padding: 10px 0;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #3d4451;
 }
 
 .logo{
@@ -63,8 +77,10 @@ body {
 }
 
 .topNavBar nav li {
+    float: left;
     padding-top:3px;
-    margin-right: 17px;
+    margin-right: 30px;
+    position: relative;
 }
 
 .topNavBar nav li a {
@@ -73,10 +89,39 @@ body {
     color: #b7b7b7;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
+ }
 
+ .topNavBar nav li.active a::after{
+     content: '';
+     display: block;
+     position: absolute;
+     top:100%;
+     left:0;
+     width: 100%;
+     background: #e06567;
+     height: 3px;
+     animation: menuSlid .3s;
+ }
+
+ @keyframes menuSlid{
+     0%{width: 0;}
+     100%{width: 100%;}
+ }
+
+.topNavBar .submue {
+    display: block;
+    position: absolute;
+    margin-top:3px;
+    top:100%;
+    right: 0;
+    background: white;
+    color:#3d4451;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
-.topNavBar nav li a:hover {
-    border-bottom: 3px solid rgb(224, 101, 103);
+
+.topNavBar .submue li {
+    white-space: nowrap;
+    padding: 5px 10px;
 }
 
 .logo {

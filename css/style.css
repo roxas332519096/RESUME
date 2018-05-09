@@ -11,7 +11,7 @@ body {
     height: 100%;
     background: #888;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
  }
 
  .stieWelcome.active {
@@ -95,6 +95,7 @@ body {
      content: '';
      display: block;
      position: absolute;
+     margin-top:-4px;
      top:100%;
      left:0;
      width: 100%;
@@ -109,20 +110,33 @@ body {
  }
 
 .topNavBar .submue {
-    display: block;
+    display: none;
     position: absolute;
-    margin-top:3px;
     top:100%;
     right: 0;
-    background: white;
     color:#3d4451;
+    background: rgba(239, 239, 239,0.6);
+    font: bold 14px "Microsoft YaHei";
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
+ }
 
-.topNavBar .submue li {
+ .topNavBar .submue li {
+    margin-right: 0;
     white-space: nowrap;
     padding: 5px 10px;
 }
+
+.topNavBar nav li.active .submue {
+    display: block;
+    animation: submenuSlide .3s;
+}
+
+@keyframes submenuSlide{
+    0%{margin-right: 100%;}
+    100%{margin-right: 0%;}
+}
+
+
 
 .logo {
     padding: 2px 0 3px 0;
@@ -144,7 +158,7 @@ body {
     background: url(../img/rs-cover.jpg);
     background-position: center center;
     height: 515px;
-    margin-top: -84px;
+    padding-top: -84px;
 }
 
 .banner .mask {
@@ -285,9 +299,13 @@ a.button:hover{
 }
 
 section.skills,section.portfolio{
-    margin:70px auto 0px;
+    margin: 80px auto 0px;
     padding-bottom: 30px;
     max-width: 940px;
+ }
+
+ section.portfolio{
+   margin-top:40px;
  }
 
 .skills h2,

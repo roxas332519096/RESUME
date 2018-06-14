@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="//at.alicdn.com/t/font_618737_13mh2fll1omq85mi.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="stieWelcome" class="stieWelcome active">
@@ -56,7 +57,7 @@
       <div class="mask"></div>
     </div>
     <main>
-      <div id="siteAbout" class="user-card">
+      <div data-x id="siteAbout" class="user-card">
         <div class="pictureAndText clearfix">
           <div class="picture">
             <img src="./img/avatar.jpg" alt="头像">
@@ -113,7 +114,7 @@
       </p>
 
     </main>
-    <section id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -154,7 +155,7 @@
             </li>
       </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
@@ -190,13 +191,43 @@
           stieWelcome.classList.remove('active')    
       },1000)
 
-      window.onscroll = function(xxx){
-          if(window.scrollY > 0){
-              topNavBar.classList.add('sticky')
-          }else{
-              topNavBar.classList.remove('sticky')
+      let specialTags = document.querySelectorAll('[data-x]');
+          for (let i = 0;i < specialTags.length;i++){
+            specialTags[i].classList.add('offSet');
           }
+
+      setTimeout(() => {
+        fineCloset();
+      },1100)
+
+      window.onscroll = function(x){
+        if(window.scrollY > 0){
+            topNavBar.classList.add('sticky')
+        }else{
+            topNavBar.classList.remove('sticky')
+        }
+        fineCloset();
       }
+          
+          
+      function fineCloset(){
+        let specialTags = document.querySelectorAll('[data-x]');
+        let minIndex = 0;
+        for (let i = 0;i < specialTags.length;i++){
+          if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+            minIndex = i;
+          }
+        }
+        specialTags[minIndex].classList.remove('offSet')
+        let id  =  specialTags[minIndex].id
+        let a = document.querySelector('a[href ="#'+ id +'"]')
+        let li = a.parentNode;
+        let lis = li.parentNode.children;
+        for(let i = 0;i < lis.length;i++){
+          lis[i].classList.remove('highlight');
+        }
+        li.classList.add('highlight');
+    }
 
       let liTags = document.querySelectorAll('nav ul li');
       for(let i=0; i<liTags.length; i++){
@@ -206,20 +237,52 @@
         liTags[i].onmouseleave = function(x){
           x.currentTarget.classList.remove('active')
         }
+      }          
+      
+
+      function animate(time) {
+          requestAnimationFrame(animate);
+          TWEEN.update(time);
       }
+      requestAnimationFrame(animate);
 
       let aTags = document.querySelectorAll('nav.menu > ul > li > a')
       for(let i=0; i<aTags.length; i++){
         aTags[i].onclick = function(x){
-          x.preventDefault()
-          let a = x.currentTarget
-          let href = a.getAttribute('href') //'#siteAbout'
-          let element = document.querySelector(href)
-          let top = element.offsetTop
-          window.scrollTo(0, top - 84)
+          x.preventDefault();
+          let a = x.currentTarget;
+          let href = a.getAttribute('href'); //'#siteAbout'
+          let element = document.querySelector(href);
+          let top = element.offsetTop;
+          let currentTop = window.scrollY;
+          let targetTop = top -84;
+          ////快动JS
+          // let n = 20;
+          // let t = 500/n;
+          // let s = S/n;
+          // let i = 0;
+          // let id = setInterval(() => {
+          //   if(i===n){              
+          //     window.clearInterval(id);
+          //     return
+          //   }
+          //   i += 1;          
+          //   window.scrollTo(0, currentTop + s * i);
+          // },t)
+          //tweenn.js
+          var coords = {y: currentTop }; 
+          var s = targetTop - currentTop;
+          var t = Math.abs((s / 100))*300;
+          if(t > 500) {t = 500};
+          var tween = new TWEEN.Tween(coords)
+                  .to({y: targetTop }, t)
+                  .easing(TWEEN.Easing.Quadratic.InOut) 
+                  .onUpdate(function() {
+                    window.scrollTo(0,coords.y) 
+                  })
+                  .start();
         }
-      }
-      
+      }      
     </script>
   </body>
 </html>

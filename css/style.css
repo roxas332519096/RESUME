@@ -3,6 +3,15 @@ body {
     position: relative;
 }
 
+[data-x].offSet{
+    transform: translateY(70px);
+}
+
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
 .stieWelcome {
     display: none;
     justify-content: center;
@@ -91,7 +100,8 @@ body {
     border-bottom: 3px solid transparent;
  }
 
- .topNavBar nav li.active a::after{
+ .topNavBar nav li.active a::after,
+ .topNavBar nav li.highlight a::after{
      content: '';
      display: block;
      position: absolute;
@@ -101,7 +111,7 @@ body {
      width: 100%;
      background: #e06567;
      height: 3px;
-     animation: menuSlid .3s;
+     animation: menuSlid .5s;
  }
 
  @keyframes menuSlid{
@@ -336,14 +346,24 @@ section h2 {
     height: 5px;
     margin:5px 0 42px;
     border-radius: 2px;
+    overflow: hidden;
 }
 
-.bar .bar-in {
+
+
+.skills .bar .bar-in {
     background-color: rgb(203, 104, 106);
     width: 50%;
     height: 100%;
     border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1s
 }
+
+.skills.offSet .bar .bar-in{
+    transform: translateX(-100%);
+}
+
 
 .skills h3 {
     font-weight: normal;
